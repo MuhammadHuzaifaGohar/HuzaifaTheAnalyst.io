@@ -375,5 +375,36 @@
                 });
             });
         </script>
+        <script>
+            
+document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll('img');
+    
+    images.forEach(img => {
+        // Normal state: Smooth fade-in and slight scale-up on load
+        img.animate([
+            { opacity: 0, transform: 'scale(0.95)' },
+            { opacity: 1, transform: 'scale(1)' }
+        ], { duration: 800, easing: 'ease-out', fill: 'forwards' });
+
+        // Hover state: Scale up smoothly
+        img.addEventListener('mouseenter', () => {
+            img.animate([
+                { transform: 'scale(1)' },
+                { transform: 'scale(1.05)' }
+            ], { duration: 300, easing: 'ease-out', fill: 'forwards' });
+        });
+
+        // Mouse leave: Scale back to normal
+        img.addEventListener('mouseleave', () => {
+            img.animate([
+                { transform: 'scale(1.05)' },
+                { transform: 'scale(1)' }
+            ], { duration: 300, easing: 'ease-out', fill: 'forwards' });
+        });
+    });
+});
+</script>
+        
     </body>
 </html>
