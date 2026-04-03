@@ -112,6 +112,20 @@ h3{font-size:1.35em;line-height:1.5em}
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
     display: block;
 }
+/* Restore Original Image Proportions */
+.spotlight .image img {
+    height: 400px !important; /* Adjust this value to your preferred original height */
+    width: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+/* Mobile Fix: Ensure images don't look squashed on small screens */
+@media screen and (max-width: 980px) {
+    .spotlight .image img {
+        height: 300px !important;
+    }
+}
 
 .spotlight:hover .image img {
     transform: scale(1.1);
